@@ -1,10 +1,15 @@
-// TODO: Include packages needed for this application
+// This block of constants contains the requirements for the application to run. 
+//The first constant, inquirer, is required to prompt the user for input.
+// The second constant, fs, is required to write the README file. 
+//The third constant, generateMarkdown, is required to generate the markdown file. 
+//The fourth constant, questions, is an array of questions that the user will be prompted to answer.
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
-// TODO: Create an array of questions for user input
+// this constant contains an array of questions that the user will be prompted to answer
 const questions = [
     {
         type: 'input',
@@ -60,14 +65,14 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// this function writes the README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log('Success!')
     );
 }
 
-// TODO: Create a function to initialize app
+// this function initializes the app
 function init() {
     inquirer.prompt(questions).then((data) => {
         writeToFile('README.md', generateMarkdown(data));
