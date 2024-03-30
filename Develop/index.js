@@ -28,7 +28,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'credits',
+        name: 'contributing',
         message: 'Please provide credits for your project.',
     },
     {
@@ -56,7 +56,7 @@ const questions = [
     {
         type: 'input',
         name: 'questions',
-        message: 'PRESS ENTER NOW.',
+        message: 'PRESS ENTER NOW!',
     },
 ];
 

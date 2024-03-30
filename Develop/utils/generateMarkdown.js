@@ -3,13 +3,13 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case 'MIT':
-      return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+      return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
     case 'Apache 2.0':
-      return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+      return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]';
     case 'GPL 3.0':
-      return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+      return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
     case 'BSD 3':
-      return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
+      return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]';
     default:
       return '';
   }
@@ -43,13 +43,13 @@ function renderLicenseSection(license) {
 
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license) + renderLicenseLink(data.license)}
+  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
+  - [Contributing](#contributing)
   - [License](#license)
   - [Tests](#tests)
   - [Questions](#questions)
@@ -57,13 +57,14 @@ function generateMarkdown(data) {
   ${data.installation}
   ## Usage
   ${data.usage}
-  ## Credits
-  ${data.credits}
+  ## Contributing
+  ${data.contributing}
   ${renderLicenseSection(data.license)}
   ## Tests
   ${data.tests}
   ## Questions
-  If you have any questions, please feel free to reach out to me at ${data.email}. You can also view my GitHub profile at github.com/${data.github}
+  If you have any questions, please feel free to reach out to me at ${data.email}. 
+  You can also view my GitHub profile at https://github.com/${data.github}
 
 
 
